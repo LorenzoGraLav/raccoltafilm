@@ -44,6 +44,9 @@ public class Film {
 		this.regista = regista;
 	}
 	
+	
+	
+	
 	public Film(String titolo, String genere) {
 		this.titolo = titolo;
 		this.genere = genere;
