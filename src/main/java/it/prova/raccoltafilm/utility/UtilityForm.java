@@ -9,8 +9,18 @@ import org.apache.commons.lang3.math.NumberUtils;
 import it.prova.raccoltafilm.model.Film;
 import it.prova.raccoltafilm.model.Regista;
 import it.prova.raccoltafilm.model.Sesso;
+import it.prova.raccoltafilm.model.Utente;
 
 public class UtilityForm {
+	
+	
+	
+	public static Utente createUtenteFromParams(String usernameInputParam,
+			String nomeInputParam, String cognomeStringParam, String dateCreatedParam) {
+		Utente result = new Utente(usernameInputParam, nomeInputParam,cognomeStringParam);
+		result.setDateCreated(parseDateArrivoFromString(dateCreatedParam));
+		return result;
+	}
 
 	public static Regista createRegistaFromParams(String nomeInputParam, String cognomeInputParam,
 			String nickNameInputParam, String dataDiNascitaStringParam, String sessoParam) {

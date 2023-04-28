@@ -1,5 +1,4 @@
 package it.prova.raccoltafilm.model;
-
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -59,6 +58,16 @@ public class Utente {
 		this.cognome = cognome;
 		this.dateCreated = dateCreated;
 	}
+
+	
+
+	public Utente(String username,String nome, String cognome) {
+		super();
+		this.username = username;
+		this.nome = nome;
+		this.cognome = cognome;
+	}
+
 
 	public Long getId() {
 		return id;

@@ -62,7 +62,8 @@
 											<td>${filmItem.minutiDurata }</td>
 											<td>
 												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaFilmServlet?idFilm=${filmItem.id }">Visualizza</a>
-												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="laservletpermodificare">Edit</a>
+										        <a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="${pageContext.request.contextPath}/PrepareUpdateFilmServlet?idFilm=${filmItem.id }">Edit</a>
+												
 												<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteFilmServlet?idFilm=${filmItem.id }">Delete</a>
 											</td>
 										</tr>

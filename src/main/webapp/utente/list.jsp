@@ -36,36 +36,36 @@
 				    <div class='card-header'>
 				        <h5>Lista dei risultati</h5> 
 				    </div>
-				    <div class='card-body'>
-				    	<a class="btn btn-primary " href="PrepareInsertRegistaServlet">Add New</a>
-				    
+				    <div class='card-body'>	    
 				        <div class='table-responsive'>
 				            <table class='table table-striped ' >
 				                <thead>
 				                    <tr>
-			                         	<th>Nome</th>
+			                         	<th>Username</th>
+				                        <th>Nome</th>
 				                        <th>Cognome</th>
-				                        <th>NickName</th>
-				                        <th>Data di Nascita</th>
-				                        <th>Sesso</th>
-				                        <th>Azioni</th>
+				                        <th>dateCreated</th>
+				                        <th>azioni</th>
+
 				                    </tr>
 				                </thead>
 				                <tbody>
-				                	<c:forEach items="${registi_list_attribute }" var="registaItem">
+				                	<c:forEach items="${listUtenteAttribute }" var="utenteItem">
 										<tr>
-											<td>${registaItem.nome }</td>
-											<td>${registaItem.cognome }</td>
-											<td>${registaItem.nickName }</td>
+											<td>${utenteItem.username }</td>
+											<td>${utenteItem.nome }</td>
+											<td>${utenteItem.cognome }</td>
 											<td>
-												<fmt:parseDate value="${registaItem.dataDiNascita}" pattern="yyyy-MM-dd" var="localDateToBeParsed" type="date"/>
+												<fmt:parseDate value="${utenteItem.dateCreated}" pattern="yyyy-MM-dd" var="localDateToBeParsed" type="date"/>
 												<fmt:formatDate pattern="dd/MM/yyyy" value="${localDateToBeParsed}" />
 											</td>
-											<td>${registaItem.sesso.abbreviazione }</td>
 											<td>
-												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaRegistaServlet?idRegista=${registaItem.id }">Visualizza</a>
-												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="${pageContext.request.contextPath}/PrepareUpdateRegistaServlet?idRegista=${registaItem.id }">Edit</a>
-												<a class="btn btn-outline-danger btn-sm" href="${pageContext.request.contextPath}/admin/PrepareDeleteRegistaServlet?idRegista=${registaItem.id }">Delete</a>
+												<a class="btn  btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/ExecuteDettaglioUtenteServlet?idUtente=${utenteItem.id }">Visualizza</a>
+												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="${pageContext.request.contextPath}/PrepareUpdateFilmServlet?idUtente=${utenteItem.id }">Edit</a>
+												<a class="btn btn-outline-danger btn-sm" href="${pageContext.request.contextPath}/PrepareDeleteFilmServlet?idUtente=${utenteItem.id }">Delete</a>
+											</td>
+											<td>
+											
 											</td>
 										</tr>
 									</c:forEach>
